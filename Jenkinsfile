@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         AWS_DEFAULT_REGION = 'us-west-2' // Replace with your AWS region
-        AWS_CREDENTIALS = credentials('8c97472c-381f-4e1a-9ee6-3e8526d15888	') // Replace with your Jenkins credentials ID
+        AWS_CREDENTIALS = credentials('8c97472c-381f-4e1a-9ee6-3e8526d15888') // Replace with your Jenkins credentials ID
     }
     
     stages {
@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy to AWS') {
             steps {
                 script {
-                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'your-aws-credentials-id']]) {
+                    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: '8c97472c-381f-4e1a-9ee6-3e8526d15888']]) {
                         sh '''
                             aws deploy create-deployment \
                                 --application-name web-app \
